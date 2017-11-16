@@ -1,3 +1,4 @@
 config/config.php
 config/firebase-config.json
 vendor/
+src/*

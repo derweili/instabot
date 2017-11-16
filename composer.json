@@ -15,7 +15,9 @@
     }
   },
   "require": {
-      "crewlabs/unsplash": "^2.3",
-      "kreait/firebase-php": "^3.0" 
+    "crewlabs/unsplash": "^2.3",
+    "kreait/firebase-php": "^3.0",
+    "mgp25/instagram-php": "^3.1",
+    "eventviva/php-image-resize": "^1.6"
   }
 }
