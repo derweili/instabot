@@ -4,7 +4,9 @@ require './../config/config.php';
 
 use Derweili\Instabot\Services\Unsplash;
 use Derweili\Instabot\Services\Database;
-
+use Derweili\Instabot\Services\Download;
+use Derweili\Instabot\Services\Instagram;
+use Derweili\Instabot\Services\Resizer;
 
 echo '<pre>';
 
