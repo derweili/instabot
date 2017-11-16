@@ -1,6 +1,6 @@
 <?php
 require dirname( dirname( __FILE__ ) ) . '/vendor/autoload.php';
-require dirname( dirname( __FILE__ ) ) . '/config/config.php'
+require dirname( dirname( __FILE__ ) ) . '/config/config.php';
 
 use Derweili\Instabot\Services\Unsplash;
 use Derweili\Instabot\Services\Database;
