@@ -13,6 +13,7 @@ echo '<pre>';
 // setup unsplash credentials
 Unsplash::setup(UNSPLASH_APPLICATION_ID, UNSPLASH_UTM_SOURCE);
 Database::setup(FIREBASE_CONFIG_FILE_PATH);
+Download::setup(TEMP_IMAGE_FOLDER);
 
 $search = $_GET['search'] ? $_GET['search'] : 'love';
 
@@ -26,7 +27,6 @@ echo "<img src='{$image->image_url}' />";
 $return = Database::store_image($image);
 
 var_dump($return);
-
 
 
 $return = Download::download_image($image);
