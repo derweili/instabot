@@ -31,7 +31,7 @@ class Unsplash
     echo 'searchByKeyword ' . $keyword;
     self::getImagesByKeyword( $keyword );
     if( self::$images ){
-      return self::validate_images( $used_image_ids );
+      return self::getValidImage( $used_image_ids );
     }
   }
 
