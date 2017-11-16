@@ -53,17 +53,17 @@ class Unsplash
     self::$images = $images;
   }
 
-  static private function getObjectFromImageArray( array $image ){
+  static private function getObjectFromImageArray( array $raw_image ){
     echo '<hr><h1>getObjectFromImageArray</h1>';
     $image = new Photo();
-    $image->id          =   self::$source_id . '_' . $image['id'];
-    $image->original_id =   $image['id'];
-    $image->image_url   =   $image['urls']['raw'];
+    $image->id          =   self::$source_id . '_' . $raw_image['id'];
+    $image->original_id =   $raw_image['id'];
+    $image->image_url   =   $raw_image['urls']['raw'];
     $image->source_name =   self::$source_name;
     $image->date        =   time();
-    $image->data        =   $image;
+    $image->data        =   $raw_image;
     $image->keyword     =   self::$keyword;
-    $image->description =   $image['description'];
+    $image->description =   $raw_image['description'];
     return $image;
   }
 
