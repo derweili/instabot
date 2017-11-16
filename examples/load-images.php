@@ -20,6 +20,21 @@ $image = Unsplash::searchByKeyword($search);
 
 echo "<img src='{$image->image_url}' />";
 
+// save image within database
 $return = Database::store_image($image);
 
+var_dump($return);
+
+
+
+$return = Download::download_image($image);
+
+echo $return;
+
+$return = Resizer::cropImageToIntagramDimensions($return);
+
+echo $return;
+
+$return = Instagram::postImage($return, '#Christmas #love');
+echo '<hr>';
 var_dump($return);
