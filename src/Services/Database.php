@@ -1,6 +1,5 @@
 <?php
-namespace Derweili\Services;
-
+namespace Derweili\Instabot\Services;
 use Kreait\Firebase\Factory;
 use Kreait\Firebase\ServiceAccount;
 
