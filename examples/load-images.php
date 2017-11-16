@@ -11,4 +11,4 @@ Unsplash::setup(UNSPLASH_APPLICATION_ID, UNSPLASH_UTM_SOURCE);
 $search = $_GET['search'] ? $_GET['search'] : 'love';
 $image = Unsplash::searchByKeyword($search);
 
-echo "<img src='{$image}' />";
+echo "<img src='{$image->image_url}' />";
