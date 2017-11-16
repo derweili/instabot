@@ -17,7 +17,7 @@ Instagram::setup(INSTAGRAM_USERNAME, INSTAGRAM_PASSWORD);
 
 $image = new class {
     public $id = 'unsplash_seflsefilsef';
-    public $url = "https://images.unsplash.com/photo-1435783099294-283725c37230";
+    public $image_url = "https://images.unsplash.com/photo-1435783099294-283725c37230";
 };
 
 $return = Download::download_image($image);

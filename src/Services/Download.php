@@ -18,7 +18,7 @@ class Download
   }
 
   static public function download_image( $image ){
-    self::downloadFile( $image->url, self::$image_folder_path . '/' . $image->id );
+    self::downloadFile( $image->image_url, self::$image_folder_path . '/' . $image->id );
     return self::$image_folder_path . '/' . $image->id;
   }
 
