@@ -9,6 +9,8 @@ use \Kreait\Firebase\ServiceAccount;
 class Database
 {
 
+  static public $image_path = 'images';
+
   static public $firebase;
   static public $database;
 
@@ -22,8 +24,12 @@ class Database
 
 
   static public function store_image( $image ){
-    return self::$database->getReference('images/' . $image->id )
+    return self::$database->getReference( self::$image_path . '/' . $image->id )
     ->set( $image );
+  }
+
+  static public function getStoredImageIDs(){
+    return self::$database->getReference( self::$image_path )->getChildKeys();
   }
 
 

@@ -2,6 +2,7 @@
 
 namespace Derweili\Instabot\Services;
 use Derweili\Instabot\Models\Photo;
+use Derweili\Instabot\Services\Database;
 
 /**
  * Unplass API Service
@@ -29,6 +30,10 @@ class Unsplash
 
   static public function searchByKeyword( string $keyword, $used_image_ids = array() ){
     self::getImagesByKeyword( $keyword );
+
+    // get stored images from database service
+    $used_image_ids = Database::getStoredImageIDs();
+
     if( self::$images ){
       return self::getValidImage( $used_image_ids );
     }
