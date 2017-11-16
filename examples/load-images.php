@@ -1,4 +1,11 @@
 <?php
+
+$number = mt_rand ( 1 , 4 );
+
+if($number != 4){
+  die('wird nicht ausgeführt');
+}
+
 require dirname( dirname( __FILE__ ) ) . '/vendor/autoload.php';
 require dirname( dirname( __FILE__ ) ) . '/config/config.php';
 
