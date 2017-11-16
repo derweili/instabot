@@ -28,7 +28,6 @@ class Unsplash
   }
 
   static public function searchByKeyword( string $keyword, $used_image_ids = array() ){
-    echo 'searchByKeyword ' . $keyword;
     self::getImagesByKeyword( $keyword );
     if( self::$images ){
       return self::getValidImage( $used_image_ids );
@@ -37,24 +36,17 @@ class Unsplash
 
 
   static private function getImagesByKeyword( string $keyword, $page = 1 ){
-    echo 'getImagesByKeyword ' . $keyword;
     self::$keyword = $keyword;
     $result = \Crew\Unsplash\Search::photos( $keyword, $page, 30 );
-    echo '<hr><h1>Result</h1>';
     $result = $result->getResults();
-    var_dump($result);
     $images = array();
     foreach ($result as $image) {
-      echo 'foreach ($result as $image) {';
       $images[] = self::getObjectFromImageArray($image);
     }
-    echo '<hr><h1>images array</h1>';
-    var_dump($images);
     self::$images = $images;
   }
 
   static private function getObjectFromImageArray( array $raw_image ){
-    echo '<hr><h1>getObjectFromImageArray</h1>';
     $image = new Photo();
     $image->id          =   self::$source_id . '_' . $raw_image['id'];
     $image->original_id =   $raw_image['id'];
@@ -68,10 +60,7 @@ class Unsplash
   }
 
   static private function getValidImage( $used_image_ids ){
-    echo '<hr><h1>getValidImage</h1>';
-    var_dump($images);
     foreach(self::$images as $image){
-      echo 'foreach image';
       if( ! in_array( $image->id, $used_image_ids ) ){
         return $image;
       }

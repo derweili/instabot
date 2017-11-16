@@ -8,6 +8,7 @@ use Derweili\Instabot\Services\Unsplash;
 
 echo '<pre>';
 Unsplash::setup(UNSPLASH_APPLICATION_ID, UNSPLASH_UTM_SOURCE);
-$image = Unsplash::searchByKeyword('love');
+$search = $_GET['search'] ? $_GET['search'] : 'love';
+$image = Unsplash::searchByKeyword($search);
 
-var_dump($image);
+echo "<img src='{$image}' />";
