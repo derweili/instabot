@@ -30,7 +30,7 @@ class Unsplash
   static public function searchByKeyword( string $keyword, $used_image_ids = array() ){
     echo 'searchByKeyword ' . $keyword;
     self::getImagesByKeyword( $keyword );
-    if( self::$result ){
+    if( self::$images ){
       return self::validate_images( $used_image_ids );
     }
   }
