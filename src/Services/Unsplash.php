@@ -41,7 +41,7 @@ class Unsplash
     self::$keyword = $keyword;
     $result = \Crew\Unsplash\Search::photos( $keyword, $page, 30 );
     echo '<hr><h1>Result</h1>';
-    $result = $result->getResults()
+    $result = $result->getResults();
     var_dump($result);
     $images = array();
     foreach ($result as $image) {
