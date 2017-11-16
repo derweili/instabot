@@ -1,6 +1,6 @@
 <?php
 
-namespace Derweili\Instabot\Model;
+namespace Derweili\Instabot\Models;
 
 /**
  * Photo Class
