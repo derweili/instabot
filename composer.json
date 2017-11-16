@@ -1,0 +1,21 @@
+{
+  "name": "derweili/instabot",
+  "description": "Autopost to Instagram",
+  "minimum-stability": "stable",
+  "license": "GPL",
+  "authors": [
+    {
+      "name": "Julian Weiland",
+      "email": "jw@derweili.de"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Derweili\\Instabot\\": "src/"
+    }
+  },
+  "require": {
+      "crewlabs/unsplash": "^2.3",
+      "kreait/firebase-php": "^3.0" 
+  }
+}
