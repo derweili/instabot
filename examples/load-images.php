@@ -27,7 +27,7 @@ Database::setup(FIREBASE_CONFIG_FILE_PATH);
 Download::setup(TEMP_IMAGE_FOLDER);
 ImageDetection::setup(VISION_CONFIG_PATH);
 
-// Instagram::setup(INSTAGRAM_USERNAME, INSTAGRAM_PASSWORD);
+Instagram::setup(INSTAGRAM_USERNAME, INSTAGRAM_PASSWORD);
 
 $search = $_GET['search'] ? $_GET['search'] : 'love';
 
@@ -73,7 +73,6 @@ $instagram_post = new InstagramImage();
 
 $instagram_post->saveFromInstagramResponse($post_return);
 
-$return = Database::store_post($instagram_post, $image);
 
 
 
@@ -84,3 +83,5 @@ var_dump($return);
 
 // save image within database
 $return = Database::store_image($image);
+
+$return = Database::store_post($instagram_post, $image);
