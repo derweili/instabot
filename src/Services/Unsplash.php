@@ -73,14 +73,15 @@ class Unsplash
 
   static private function getImagesByKeyword( string $keyword, $page = 1 ){
     self::$keyword = $keyword;
-    echo 'getImagesByKeyword';
-    $result = \Crew\Unsplash\Search::photos( $keyword, $page, 30 );
+    echo 'getImagesByKeyword ';
+    $result = \Crew\Unsplash\Search::photos( self::$keyword, $page, 30 );
     $result = $result->getResults();
     $images = array();
     foreach ($result as $image) {
       $images[] = self::getObjectFromImageArray($image);
     }
     self::$images = $images;
+    return $images;
   }
 
   static private function getObjectFromImageArray( array $raw_image ){
