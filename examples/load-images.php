@@ -47,6 +47,7 @@ var_dump($return);
 // download image to temp folder
 $path = Download::download_image($image);
 
+echo '<br>original Image path: ' . $path . ' <br>';
 /*
  * Image Content Detection
  */
@@ -56,9 +57,12 @@ $hashtags = CaptionGenerator::generate_hashtag_string($topics_array);
 
 $hashtags .= '#love';
 
-echo $return;
+echo 'Hashtags: ' . $hashtags . ' <br>';
+
 
 $square_image_path = Resizer::cropImageToIntagramDimensions($path);
+
+echo 'square Image path: ' . $square_image_path . ' <br>';
 
 echo $return;
 
