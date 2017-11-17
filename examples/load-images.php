@@ -48,10 +48,16 @@ var_dump($return);
 $path = Download::download_image($image);
 
 echo '<br>original Image path: ' . $path . ' <br>';
+
+
+$square_image_path = Resizer::cropImageToIntagramDimensions($path);
+
+echo 'square Image path: ' . $square_image_path . ' <br>';
+
 /*
  * Image Content Detection
  */
-$topics = ImageDetection::getImageInfo($path);
+$topics = ImageDetection::getImageInfo($square_image_path);
 $topics_array = ImageDetection::topcisToArray($topics);
 
 $topics_array[] = 'love';
@@ -62,11 +68,6 @@ $hashtags = CaptionGenerator::generate_hashtag_string($topics_array);
 echo 'Hashtags: ' . $hashtags . ' <br>';
 
 
-$square_image_path = Resizer::cropImageToIntagramDimensions($path);
-
-echo 'square Image path: ' . $square_image_path . ' <br>';
-
-echo $return;
 
 $post_return = Instagram::postImage($square_image_path, $hashtags);
 
