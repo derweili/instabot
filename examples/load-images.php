@@ -53,9 +53,11 @@ echo '<br>original Image path: ' . $path . ' <br>';
  */
 $topics = ImageDetection::getImageInfo($path);
 $topics_array = ImageDetection::topcisToArray($topics);
+
+$topics_array[] = 'love';
+
 $hashtags = CaptionGenerator::generate_hashtag_string($topics_array);
 
-$hashtags .= '#love';
 
 echo 'Hashtags: ' . $hashtags . ' <br>';
 
@@ -84,4 +86,4 @@ var_dump($return);
 // save image within database
 $return = Database::store_image($image);
 
-$return = Database::store_post($instagram_post, $image);
+$return = Database::store_post($instagram_post, $image, $topics_array);

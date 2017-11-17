@@ -33,11 +33,13 @@ class Database
     return self::$database->getReference( self::$image_path )->getChildKeys();
   }
 
-  static public function store_post( $post, $image ){
+  static public function store_post( $post, $image, $topics){
     self::$database->getReference( self::$instagram_post_path . '/' . $post->id . '/post_data' )
     ->set( $post );
     self::$database->getReference( self::$instagram_post_path . '/' . $post->id . '/image_data' )
     ->set( $image );
+    self::$database->getReference( self::$instagram_post_path . '/' . $post->id . '/topics' )
+    ->set( $topics );
   }
 
 
