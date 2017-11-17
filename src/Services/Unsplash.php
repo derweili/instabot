@@ -14,6 +14,7 @@ class Unsplash
   static public $source_name = 'Unsplash';
   static public $keyword;
   static public $images;
+  static private $maximum_page_iterations = 10;
 
   /*
    * @param array $result
@@ -29,14 +30,35 @@ class Unsplash
   }
 
   static public function searchByKeyword( string $keyword, $used_image_ids = array() ){
-    self::getImagesByKeyword( $keyword );
 
-    // get stored images from database service
-    $used_image_ids = Database::getStoredImageIDs();
+    self::$used_image_ids = Database::getStoredImageIDs();
+
+
 
     if( self::$images ){
       return self::getValidImage( $used_image_ids );
     }
+  }
+
+  static private function catchAndLoopThroughImages(){
+
+    // loop from 1 to $maximum_page_iterations (10)
+
+    for($i=1; $i <= self::$maximum_page_iterations; $i++) {
+      echo 'page: ' . $i;
+      // get images by keyword and page
+      $images = self::getImagesByKeyword( $keyword, $i );
+
+       if( $images ){
+         $validate_image_result = self::getValidImage( $images, $used_image_ids );
+
+         if($validate_image_result) return $validate_image_result;
+       }
+
+    }
+
+
+
   }
 
 
@@ -64,12 +86,13 @@ class Unsplash
     return $image;
   }
 
-  static private function getValidImage( $used_image_ids ){
-    foreach(self::$images as $image){
+  static private function getValidImage( $images, $used_image_ids ){
+    foreach( $images as $image ){
       if( ! in_array( $image->id, $used_image_ids ) ){
         return $image;
       }
     }
+    return false;
   }
 
 }

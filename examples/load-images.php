@@ -3,7 +3,7 @@
 $number = mt_rand ( 1 , 4 );
 
 if($number != 4){
-  die('wird nicht ausgeführt');
+  // die('wird nicht ausgeführt');
 }
 
 require dirname( dirname( __FILE__ ) ) . '/vendor/autoload.php';
@@ -14,6 +14,7 @@ use Derweili\Instabot\Services\Database;
 use Derweili\Instabot\Services\Download;
 use Derweili\Instabot\Services\Instagram;
 use Derweili\Instabot\Services\Resizer;
+use Derweili\Instabot\Models\InstagramImage;
 
 echo '<pre>';
 
@@ -45,6 +46,16 @@ $return = Resizer::cropImageToIntagramDimensions($return);
 
 echo $return;
 
-$return = Instagram::postImage($return, '#Christmas #love');
+$post_return = Instagram::postImage($return, '#Christmas #love');
+
+
+$instagram_post = new InstagramImage();
+
+$instagram_post->saveFromInstagramResponse($post_return);
+
+$return = Database::store_post($instagram_post, $image);
+
+
+
 echo '<hr>';
 var_dump($return);
