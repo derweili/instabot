@@ -22,7 +22,7 @@ echo '<pre>';
 Unsplash::setup(UNSPLASH_APPLICATION_ID, UNSPLASH_UTM_SOURCE);
 Database::setup(FIREBASE_CONFIG_FILE_PATH);
 Download::setup(TEMP_IMAGE_FOLDER);
-Instagram::setup(INSTAGRAM_USERNAME, INSTAGRAM_PASSWORD);
+// Instagram::setup(INSTAGRAM_USERNAME, INSTAGRAM_PASSWORD);
 
 $search = $_GET['search'] ? $_GET['search'] : 'love';
 
@@ -30,8 +30,13 @@ $search = $_GET['search'] ? $_GET['search'] : 'love';
 // search for image by keyword
 $image = Unsplash::searchByKeyword($search);
 
-echo "<img src='{$image->image_url}' />";
+echo 'unsplash image: ';
+var_dump($image);
 
+// echo "<img src='{$image->image_url}' />";
+
+
+die();
 // save image within database
 $return = Database::store_image($image);
 
