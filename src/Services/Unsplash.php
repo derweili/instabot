@@ -39,9 +39,7 @@ class Unsplash
     echo 'used image ids:';
     var_dump(self::$used_image_ids);
     return self::catchAndLoopThroughImages($keyword);
-    // if( self::$images ){
-    //   return self::getValidImage( $used_image_ids );
-    // }
+    
   }
 
   static private function catchAndLoopThroughImages($keyword){
@@ -55,7 +53,7 @@ class Unsplash
       echo 'images received';
        if( $images ){
          echo 'if $images';
-         $validate_image_result = self::getValidImage( $images, $used_image_ids );
+         $validate_image_result = self::getValidImage( $images, self::$used_image_ids );
 
          if($validate_image_result){
            echo 'image valid';
@@ -80,7 +78,6 @@ class Unsplash
     foreach ($result as $image) {
       $images[] = self::getObjectFromImageArray($image);
     }
-    self::$images = $images;
     return $images;
   }
 
