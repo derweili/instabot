@@ -42,7 +42,6 @@ var_dump($image);
 
 
 
-var_dump($return);
 
 // download image to temp folder
 $path = Download::download_image($image);
@@ -80,7 +79,6 @@ $instagram_post->saveFromInstagramResponse($post_return);
 
 
 echo '<hr>';
-var_dump($return);
 
 
 
