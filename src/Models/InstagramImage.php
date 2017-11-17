@@ -29,7 +29,7 @@ class InstagramImage
 
 
 
-  saveFromInstagramResponse( $response_object ){
+  static public function saveFromInstagramResponse( $response_object ){
     $this->upload_id = $response_object->upload_id;
     $this->code = $response_object->media->code;
     $this->id = $response_object->media->id;
