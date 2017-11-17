@@ -42,9 +42,6 @@ var_dump($image);
 
 
 
-// save image within database
-$return = Database::store_image($image);
-
 var_dump($return);
 
 // download image to temp folder
@@ -53,7 +50,7 @@ $path = Download::download_image($image);
 /*
  * Image Content Detection
  */
-$topics = ImageDetection::getImageInfo($test_image);
+$topics = ImageDetection::getImageInfo($path);
 $topics_array = ImageDetection::topcisToArray($topics);
 $hashtags = CaptionGenerator::generate_hashtag_string($topics_array);
 
@@ -78,3 +75,8 @@ $return = Database::store_post($instagram_post, $image);
 
 echo '<hr>';
 var_dump($return);
+
+
+
+// save image within database
+$return = Database::store_image($image);
