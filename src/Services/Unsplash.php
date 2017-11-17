@@ -15,6 +15,7 @@ class Unsplash
   static public $keyword;
   static public $images;
   static private $maximum_page_iterations = 10;
+  static public $used_image_ids = array();
 
   /*
    * @param array $result
