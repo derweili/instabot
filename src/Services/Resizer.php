@@ -11,8 +11,16 @@ class Resizer
   static private $instagram_photo_width = 1080;
   static private $instagram_photo_height = 1080;
 
+  static private $instagram_story_width = 1080;
+  static private $instagram_story_height = 1920;
+
   static public function cropImageToIntagramDimensions($path){
     self::cropImageSaveJpg($path, self::$instagram_photo_width, self::$instagram_photo_height);
+    return $path . '.jpg';
+  }
+
+  static public function cropImageToIntagramStoryDimensions($path){
+    self::cropImageSaveJpg($path, self::$instagram_story_width, self::$instagram_story_height);
     return $path . '.jpg';
   }
 
