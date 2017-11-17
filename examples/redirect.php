@@ -6,7 +6,7 @@ require dirname( dirname( __FILE__ ) ) . '/config/config.php';
 $instagram = new Andreyco\Instagram\Client(array(
   'apiKey'      => INSTAGRAM_API_KEY,
   'apiSecret'   => INSTAGRAM_API_SECRET,
-  'apiCallback' => UNSPLASH_AUTH_CODE,
+  'apiCallback' => INSTAGRAM_API_CALLBACK,
   'scope'       => array('basic','comments','follower_list','likes','public_content','relationships'),
 ));
 
