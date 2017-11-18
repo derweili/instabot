@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8441abdef151c90d030e3cda9c8d2954",
+    "content-hash": "ea9b6782df23120ded72ab53c4495fd5",
     "packages": [
         {
             "name": "andreyco/instagram",
@@ -158,6 +158,58 @@
             "time": "2017-08-20T08:06:53+00:00"
         },
         {
+            "name": "cloudinary/cloudinary_php",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cloudinary/cloudinary_php.git",
+                "reference": "2800f0f1d53b4d7d4cc8c86bdba1d42bb4f3e6af"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cloudinary/cloudinary_php/zipball/2800f0f1d53b4d7d4cc8c86bdba1d42bb4f3e6af",
+                "reference": "2800f0f1d53b4d7d4cc8c86bdba1d42bb4f3e6af",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "5.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src"
+                ],
+                "files": [
+                    "src/Helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cloudinary",
+                    "homepage": "https://github.com/cloudinary/cloudinary_php/graphs/contributors"
+                }
+            ],
+            "description": "Cloudinary PHP SDK",
+            "homepage": "https://github.com/cloudinary/cloudinary_php",
+            "keywords": [
+                "cdn",
+                "cloud",
+                "cloudinary",
+                "image management",
+                "sdk"
+            ],
+            "time": "2017-06-20T13:15:14+00:00"
+        },
+        {
             "name": "clue/http-proxy-react",
             "version": "v1.2.0",
             "source": {
@@ -265,66 +317,23 @@
             "time": "2017-09-17T15:09:14+00:00"
         },
         {
-            "name": "corneltek/getoptionkit",
-            "version": "2.6.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/c9s/GetOptionKit.git",
-                "reference": "995607ddf4fc90ebdb4a7d58fe972d581ad8495f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/c9s/GetOptionKit/zipball/995607ddf4fc90ebdb4a7d58fe972d581ad8495f",
-                "reference": "995607ddf4fc90ebdb4a7d58fe972d581ad8495f",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.6.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "GetOptionKit\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Yo-An Lin",
-                    "email": "yoanlin93@gmail.com"
-                }
-            ],
-            "description": "Powerful command-line option toolkit",
-            "homepage": "http://github.com/c9s/GetOptionKit",
-            "time": "2017-06-30T14:54:48+00:00"
-        },
-        {
             "name": "crewlabs/unsplash",
-            "version": "2.3.2",
+            "version": "2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unsplash/unsplash-php.git",
-                "reference": "21d5c12d9b3c4a64ccce2eeb74ad0cd4b3130998"
+                "reference": "c1b2ca020d456232286dd14ed6a764fd00547590"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unsplash/unsplash-php/zipball/21d5c12d9b3c4a64ccce2eeb74ad0cd4b3130998",
-                "reference": "21d5c12d9b3c4a64ccce2eeb74ad0cd4b3130998",
+                "url": "https://api.github.com/repos/unsplash/unsplash-php/zipball/c1b2ca020d456232286dd14ed6a764fd00547590",
+                "reference": "c1b2ca020d456232286dd14ed6a764fd00547590",
                 "shasum": ""
             },
             "require": {
-                "guzzlehttp/guzzle": "6.3.0",
-                "hughbertd/oauth2-unsplash": "1.0.2",
-                "league/oauth2-client": "1.4.2",
-                "php": ">=5.6.0"
+                "guzzlehttp/guzzle": "~6.2.1",
+                "league/oauth2-client": "~1.4.1",
+                "php": ">=5.5.0"
             },
             "require-dev": {
                 "mockery/mockery": "~0.9.0",
@@ -348,14 +357,10 @@
                 {
                     "name": "Charles Lalonde",
                     "email": "charles@pickcrew.com"
-                },
-                {
-                    "name": "Hugh Downer",
-                    "email": "hugh.downer@gmail.com"
                 }
             ],
             "description": "Wrapper to access information from Unsplash API more easily",
-            "time": "2017-06-26T15:27:58+00:00"
+            "time": "2017-03-21T19:48:44+00:00"
         },
         {
             "name": "evenement/evenement",
@@ -590,16 +595,16 @@
         },
         {
             "name": "google/cloud-core",
-            "version": "v1.13.0",
+            "version": "v1.13.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GoogleCloudPlatform/google-cloud-php-core.git",
-                "reference": "0f66ff084f014f253f28eb7a232a680bc6e4feeb"
+                "reference": "6381258230b54da33a6c1eec5466aefe5eb9759d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GoogleCloudPlatform/google-cloud-php-core/zipball/0f66ff084f014f253f28eb7a232a680bc6e4feeb",
-                "reference": "0f66ff084f014f253f28eb7a232a680bc6e4feeb",
+                "url": "https://api.github.com/repos/GoogleCloudPlatform/google-cloud-php-core/zipball/6381258230b54da33a6c1eec5466aefe5eb9759d",
+                "reference": "6381258230b54da33a6c1eec5466aefe5eb9759d",
                 "shasum": ""
             },
             "require": {
@@ -636,7 +641,7 @@
                 "Apache-2.0"
             ],
             "description": "Google Cloud PHP shared dependency, providing functionality useful to all components.",
-            "time": "2017-11-16T21:25:15+00:00"
+            "time": "2017-11-17T18:39:32+00:00"
         },
         {
             "name": "google/cloud-vision",
@@ -849,16 +854,16 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "6.3.0",
+            "version": "6.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "f4db5a78a5ea468d4831de7f0bf9d9415e348699"
+                "reference": "8d6c6cc55186db87b7dc5009827429ba4e9dc006"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/f4db5a78a5ea468d4831de7f0bf9d9415e348699",
-                "reference": "f4db5a78a5ea468d4831de7f0bf9d9415e348699",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/8d6c6cc55186db87b7dc5009827429ba4e9dc006",
+                "reference": "8d6c6cc55186db87b7dc5009827429ba4e9dc006",
                 "shasum": ""
             },
             "require": {
@@ -868,11 +873,8 @@
             },
             "require-dev": {
                 "ext-curl": "*",
-                "phpunit/phpunit": "^4.0 || ^5.0",
+                "phpunit/phpunit": "^4.0",
                 "psr/log": "^1.0"
-            },
-            "suggest": {
-                "psr/log": "Required for using the Log middleware"
             },
             "type": "library",
             "extra": {
@@ -910,7 +912,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2017-06-22T18:50:49+00:00"
+            "time": "2017-02-28T22:50:30+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -1027,58 +1029,6 @@
                 "url"
             ],
             "time": "2017-03-20T17:10:46+00:00"
-        },
-        {
-            "name": "hughbertd/oauth2-unsplash",
-            "version": "1.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/HughbertD/oauth2-unsplash.git",
-                "reference": "ebd5102f665d9e8c889d836ff71df92dc8750ef8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/HughbertD/oauth2-unsplash/zipball/ebd5102f665d9e8c889d836ff71df92dc8750ef8",
-                "reference": "ebd5102f665d9e8c889d836ff71df92dc8750ef8",
-                "shasum": ""
-            },
-            "require": {
-                "league/oauth2-client": "^1.0",
-                "php": ">=5.6.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "~0.9",
-                "phpunit/phpunit": "~5.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Unsplash\\OAuth2\\Client\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Hugh Downer",
-                    "email": "hugh.downer@gmail.com"
-                }
-            ],
-            "description": "Unsplash OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
-            "keywords": [
-                "Authentication",
-                "SSO",
-                "Unsplash",
-                "authorization",
-                "identity",
-                "idp",
-                "oauth",
-                "oauth2",
-                "single sign on"
-            ],
-            "time": "2017-04-05T15:54:38+00:00"
         },
         {
             "name": "ircmaxell/random-lib",
@@ -1292,56 +1242,6 @@
                 "token"
             ],
             "time": "2017-07-12T17:38:06+00:00"
-        },
-        {
-            "name": "lazyjsonmapper/lazyjsonmapper",
-            "version": "v1.6.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/SteveJobzniak/LazyJsonMapper.git",
-                "reference": "9066dc567b25784eac9ffe653fac92abb7c2115a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/SteveJobzniak/LazyJsonMapper/zipball/9066dc567b25784eac9ffe653fac92abb7c2115a",
-                "reference": "9066dc567b25784eac9ffe653fac92abb7c2115a",
-                "shasum": ""
-            },
-            "require": {
-                "corneltek/getoptionkit": "2.*",
-                "php": ">=5.6"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.7.1",
-                "phpunit/phpunit": "6.*"
-            },
-            "bin": [
-                "bin/lazydoctor"
-            ],
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "LazyJsonMapper\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "SteveJobzniak",
-                    "homepage": "https://github.com/SteveJobzniak",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Advanced, intelligent & automatic object-oriented JSON containers for PHP.",
-            "homepage": "https://github.com/SteveJobzniak/LazyJsonMapper",
-            "keywords": [
-                "development",
-                "json"
-            ],
-            "time": "2017-11-14T00:06:59+00:00"
         },
         {
             "name": "lcobucci/jwt",
@@ -2329,12 +2229,65 @@
                 "php"
             ],
             "time": "2017-10-09T07:54:13+00:00"
+        },
+        {
+            "name": "zoonman/pixabay-php-api",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zoonman/pixabay-php-api.git",
+                "reference": "91105ea07c835b830bdd58787cc34c2fb68910f7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zoonman/pixabay-php-api/zipball/91105ea07c835b830bdd58787cc34c2fb68910f7",
+                "reference": "91105ea07c835b830bdd58787cc34c2fb68910f7",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~6.2.1",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.3.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Pixabay\\": "src/Pixabay/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Philipp Tkachev",
+                    "email": "philipp@zoonman.com",
+                    "homepage": "https://www.zoonman.com/"
+                }
+            ],
+            "description": "PixabayClient is a PHP HTTP client library to access Pixabay's API",
+            "homepage": "https://www.zoonman.com/projects/pixabay/",
+            "keywords": [
+                "Pixabay",
+                "client",
+                "curl",
+                "http",
+                "http client",
+                "rest",
+                "web service"
+            ],
+            "time": "2017-11-05T02:19:37+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "cloudinary/cloudinary_php": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

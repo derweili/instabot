@@ -3,7 +3,24 @@
 require '../vendor/autoload.php';
 require '../config/config.php';
 $instagram = new Andreyco\Instagram\Client(INSTAGRAM_API_KEY);
-$result = $instagram->searchTags('summer');
+$instagram->setAccessToken(INSTAGRAM_API_ACCESS_TOKEN);
+$result = $instagram->searchTags('macarron');
+
+echo '<pre>';
+// var_dump($result);
+
+$tags = $result->data;
+
+$posts = array();
+foreach ($tags as $key => $row)
+{
+    $posts[$key] = $row->media_count;
+}
+array_multisort($posts, SORT_DESC, $tags);
+var_dump($tags);
+
+
+die();
 ?>
 
 <!DOCTYPE html>

@@ -22,7 +22,7 @@ class Download
     return self::$image_folder_path . '/' . $image->id;
   }
 
-  static private function downloadFile( $url, $path )
+  static public function downloadFile( $url, $path )
   {
       $newfname = $path;
       $file = fopen ($url, 'rb');

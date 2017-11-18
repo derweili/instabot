@@ -10,6 +10,10 @@ use InstagramAPI\Instagram as PrivateInstagramAPI;
  */
 class Instagram
 {
+  static public $video_width = 1080;
+
+  static public $video_height = 1080;
+
   static private $ig;
   static private $debug = true;
   static private $truncatedDebug = false;
