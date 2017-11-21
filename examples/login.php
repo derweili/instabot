@@ -1,6 +1,6 @@
 <?php
-require './vendor/autoload.php';
-require './config.php';
+require './../vendor/autoload.php';
+require './../config/config.php';
 session_start();
 
 // Landing on the page for the first time, setup connection with private application details registered with unsplash and redirect user to authenticate
