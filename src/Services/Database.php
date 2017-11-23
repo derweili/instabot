@@ -10,6 +10,7 @@ class Database
 {
 
   static public $image_path = 'images';
+  static public $video_path = 'videos';
   static public $instagram_post_path = 'instagram_posts';
 
   static public $firebase;
@@ -29,8 +30,32 @@ class Database
     ->set( $image );
   }
 
+
+  static public function store_video( $video ){
+    return self::$database->getReference( self::$video_path . '/' . $video->id )
+    ->set( $video );
+  }
+
   static public function getStoredImageIDs(){
+
+    $reference = self::$database->getReference('');
+    $value = $reference->getValue();
+    if( ! array_key_exists( self::$image_path, $value ) ) return [];
+
     return self::$database->getReference( self::$image_path )->getChildKeys();
+  }
+
+  static public function getStoredVideoIDs(){
+
+    $reference = self::$database->getReference('');
+    $value = $reference->getValue();
+    if( ! array_key_exists( self::$video_path, $value ) ) return [];
+
+    $current_database = $database->getReference('');
+      $stored_videos = self::$database->getReference( self::$video_path )->getChildKeys();
+
+
+    return $stored_videos;
   }
 
   static public function store_post( $post, $image, $topics){

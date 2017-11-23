@@ -1,11 +1,11 @@
 <?php
 
 namespace Derweili\Instabot\Models;
-
+use Derweili\Instabot\Models\Photo;
 /**
- * Photo Class
+ * Video Class
  */
-class Photo
+class Video extends Photo
 {
 
   public $id;
@@ -18,7 +18,7 @@ class Photo
 
   public $topic;
 
-  public $date;
+  public $tags;
 
   public $data;
 
@@ -26,6 +26,6 @@ class Photo
 
   public $description;
 
-  public $keywords = array();
+  public $video_url;
 
 }

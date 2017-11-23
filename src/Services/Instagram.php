@@ -2,7 +2,9 @@
 
 namespace Derweili\Instabot\Services;
 use Derweili\Instabot\Models\Photo;
+use Derweili\Instabot\Models\Hashtag;
 use InstagramAPI\Instagram as PrivateInstagramAPI;
+use Andreyco\Instagram\Client as PublicInstagramAPI;
 
 
 /**
@@ -14,6 +16,9 @@ class Instagram
 
   static public $video_height = 1080;
 
+  // used as service object for the official instagram api
+  static public $instagram_official;
+
   static private $ig;
   static private $debug = true;
   static private $truncatedDebug = false;
@@ -21,6 +26,11 @@ class Instagram
   static public function setup( $username, $password ){
     self::$ig = new PrivateInstagramAPI(self::$debug, self::$truncatedDebug);
     self::login($username, $password);
+  }
+
+  static public function setup_official_api( string $instagram_api_key, string $instagram_access_token ){
+    self::$instagram_official = new \Andreyco\Instagram\Client($instagram_api_key);
+    self::$instagram_official->setAccessToken($instagram_access_token);
   }
 
   static private function login( $username, $password ){
@@ -35,6 +45,17 @@ class Instagram
   static public function postImage( $imagePath, $captionText ){
     try {
         $return = self::$ig->timeline->uploadPhoto($imagePath, ['caption' => $captionText]);
+    } catch (\Exception $e) {
+        echo 'Something went wrong: '.$e->getMessage()."\n";
+    }
+    return $return;
+  }
+
+
+  static public function postVideo( $imagePath, $captionText ){
+    echo '<h1>post video</h1>';
+    try {
+        $return = self::$ig->timeline->uploadVideo( $imagePath, [ 'caption' => $captionText ] );
     } catch (\Exception $e) {
         echo 'Something went wrong: '.$e->getMessage()."\n";
     }
@@ -75,5 +96,22 @@ class Instagram
     return $return;
   }
 
+  /*
+   * Search for Hashtags via official Instagram API
+   */
+  static public function search_hashtags( string $search = '' ){
+    $results = self::$instagram_official->searchTags($search);
+    $return = [];
+    // var_dump($results);
+
+    // loop through results an transform into Hashtag Model
+    foreach ( $results->data as $result ) {
+      $new_hashtag = new Hashtags();
+      $new_hashtag->name = $result->name;
+      $new_hashtag->media_count = $result->media_count;
+      $return[] = $new_hashtag;
+    }
+    return $return;
+  }
 
 }

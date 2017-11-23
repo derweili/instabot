@@ -18,6 +18,7 @@ use Derweili\Instabot\Models\InstagramImage;
 # Imports the Google Cloud client library
 use Derweili\Instabot\Services\ImageDetection;
 use Derweili\Instabot\Services\CaptionGenerator;
+use Derweili\Instabot\Services\Hashtags;
 
 echo '<pre>';
 
@@ -28,6 +29,7 @@ Download::setup(TEMP_IMAGE_FOLDER);
 ImageDetection::setup(VISION_CONFIG_PATH);
 
 Instagram::setup(INSTAGRAM_USERNAME, INSTAGRAM_PASSWORD);
+Instagram::setup_official_api( INSTAGRAM_API_KEY,INSTAGRAM_API_ACCESS_TOKEN );
 
 $search = $_GET['search'] ? $_GET['search'] : 'love';
 
@@ -59,16 +61,21 @@ echo 'square Image path: ' . $square_image_path . ' <br>';
 $topics = ImageDetection::getImageInfo($square_image_path);
 $topics_array = ImageDetection::topcisToArray($topics);
 
-$topics_array[] = 'love';
-
-$hashtags = CaptionGenerator::generate_hashtag_string($topics_array);
+echo '<h1>topics</h1>';
+// $topics_array[] = 'love';
+var_dump($topics_array);
+$hashtags = Hashtags::get_popular_hashtags_by_search_terms($topics_array);
+echo '<h1>$hashtags</h1>';
+// $topics_array[] = 'love';
+var_dump($hashtags);
+$caption = CaptionGenerator::generate_hashtag_string($hashtags);
 
 
 echo 'Hashtags: ' . $hashtags . ' <br>';
 
 
 
-$post_return = Instagram::postImage($square_image_path, $hashtags);
+$post_return = Instagram::postImage($square_image_path, $caption);
 
 
 $instagram_post = new InstagramImage();
