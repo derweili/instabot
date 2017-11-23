@@ -27,7 +27,7 @@ class Instagram
     self::$ig = new PrivateInstagramAPI(self::$debug, self::$truncatedDebug);
   }
   static public function privateApiLogin( $username, $password ){
-    if(self::$id == null) self::privateApiSetup();
+    if(self::$ig == null) self::privateApiSetup();
     self::login($username, $password);
   }
 
