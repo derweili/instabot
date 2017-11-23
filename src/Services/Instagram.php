@@ -19,12 +19,15 @@ class Instagram
   // used as service object for the official instagram api
   static public $instagram_official;
 
-  static private $ig;
+  static private $ig = null;
   static private $debug = true;
   static private $truncatedDebug = false;
 
-  static public function setup( $username, $password ){
+  static public function privateApiSetup(){
     self::$ig = new PrivateInstagramAPI(self::$debug, self::$truncatedDebug);
+  }
+  static public function privateApiLogin( $username, $password ){
+    if(self::$id == null) self::privateApiSetup();
     self::login($username, $password);
   }
 
