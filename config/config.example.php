@@ -26,3 +26,7 @@ define( 'VISION_CONFIG_PATH', dirname( dirname( __FILE__ ) ) . '/config/google-v
 define('CLOUDINARY_CLOUD_NAME', 'cloud-name');
 define('CLOUDINARY_API_KEY', 'api-key');
 define('CLOUDINARY_API_SECRET', 'api-secret');
+
+define('PIXABAY_API_KEY', 'your pixabay api key');
+
+define('PRIMARY_SEARCH_TERM', 'searchterm');

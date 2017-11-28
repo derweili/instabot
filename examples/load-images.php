@@ -32,7 +32,7 @@ Instagram::privateApiSetup();
 Instagram::privateApiLogin(INSTAGRAM_USERNAME, INSTAGRAM_PASSWORD);
 Instagram::setup_official_api( INSTAGRAM_API_KEY,INSTAGRAM_API_ACCESS_TOKEN );
 
-$search = $_GET['search'] ? $_GET['search'] : 'love';
+$search = PRIMARY_SEARCH_TERM;
 
 
 // search for image by keyword
