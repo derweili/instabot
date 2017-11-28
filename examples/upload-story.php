@@ -27,7 +27,7 @@ Database::setup(FIREBASE_CONFIG_FILE_PATH);
 Download::setup(TEMP_IMAGE_FOLDER);
 ImageDetection::setup(VISION_CONFIG_PATH);
 
-Instagram::setup(INSTAGRAM_USERNAME, INSTAGRAM_PASSWORD);
+Instagram::privateApiLogin(INSTAGRAM_USERNAME, INSTAGRAM_PASSWORD);
 
 $search = $_GET['search'] ? $_GET['search'] : 'love';
 
