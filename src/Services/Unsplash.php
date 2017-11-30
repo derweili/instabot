@@ -85,7 +85,11 @@ class Unsplash
     $image = new Photo();
     $image->id          =   self::$source_id . '_' . $raw_image['id'];
     $image->original_id =   $raw_image['id'];
-    $image->image_url   =   $raw_image['urls']['raw'];
+    if($raw_image['urls']['full']){
+          $image->image_url   =   $raw_image['urls']['full'];
+    }else{
+          $image->image_url   =   $raw_image['urls']['raw'];
+    }
     $image->source_name =   self::$source_name;
     $image->date        =   time();
     $image->data        =   $raw_image;
