@@ -29,8 +29,8 @@ ImageDetection::setup(VISION_CONFIG_PATH);
 
 Instagram::privateApiLogin(INSTAGRAM_USERNAME, INSTAGRAM_PASSWORD);
 
-$search = $_GET['search'] ? $_GET['search'] : 'love';
-
+//$search = $_GET['search'] ? $_GET['search'] : 'love';
+$search = PRIMARY_SEARCH_TERM;
 
 // search for image by keyword
 $image = Unsplash::searchByKeyword($search);
